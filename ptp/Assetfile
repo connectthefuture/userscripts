@@ -1,0 +1,26 @@
+require "pd"
+require "rake-pipeline-web-filters"
+require "./filters"
+
+NAME = "ptp"
+
+output "dist"
+
+input "lib" do
+  match "**/*.coffee" do
+    coffee_script :bare => true
+
+    concat "#{NAME}.user.js"
+  end
+end
+
+input "dist" do
+  match "#{NAME}.user.js" do
+    meta
+
+    copy "#{NAME}.meta.js"
+  end
+end
+
+
+# vim: ft=ruby
