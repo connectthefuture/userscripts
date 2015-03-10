@@ -13,4 +13,5 @@
 // @include       *://*passthepopcorn.me*
 // ==/UserScript==
 `
+
 $("#menu ul").append($('<li id="nav_collection"><a href="/bookmarks.php?type=collections">Collections</a></li>'))
